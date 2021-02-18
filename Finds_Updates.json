@@ -1,0 +1,103 @@
+db.alunos.find({
+	"nome": "Juliano"
+}).pretty()
+
+
+db.alunos.find({
+	"habilidades.nome": "Inglês",
+	"habilidades.nivel": "Intermediário"
+}).pretty()
+
+
+///OR
+db.alunos.find({
+	$or: [
+		{"curso.nome": "Engenharia Química"},
+		{"curso.nome": "Sistemas de Informação"},
+		{"curso.nome": "Moda"}
+	],
+	"nome": "Daniela"
+}).pretty()
+
+
+db.alunos.find({
+	"curso.nome": {
+		$in : ["Engenharia Química", "Sistemas de Informação", "Moda"]
+		},
+	"nome": "Daniela"
+}).pretty()
+
+
+db.alunos.find({
+	"nome": "Felipe",
+	"data_nascimento":  new Date(1994,02, 27)
+}).pretty()
+
+
+//SE fizer isso, o objeto inteiro terá apenas "nome": "Sistemas de Informação"
+db.alunos.update( 
+{"curso.nome": "Sistema de Informação"},
+{"nome": "Sistemas de Informação"}
+)
+
+//update CORRETO
+db.alunos.update( 
+	{"curso.nome": "Sistemas de Informação"},
+	{
+		$set: {"curso.nome": "Sistemas De Informação"}
+	},
+	{multi: true}
+)
+
+
+
+db.alunos.update( 
+	{"nome": "Felipe"},
+	{
+		$push: {"notas": 6.0}
+	},
+	{multi: true}
+)
+
+
+db.alunos.update( 
+	{"nome": "Felipe"},
+	{
+		$push: {
+			"notas": {
+				$each: [5.0, 3.0]
+			} 
+		}
+	},
+	{multi: true}
+)
+
+
+
+
+
+
+db.alunos.update( 
+{"nome": "Felipe"},
+{"nome": "Pedro",
+"curso": {
+		"nome": "Medicina"
+	}
+})
+
+
+
+
+
+db.alunos.update( 
+	{"nome": "Ferbabdi"},
+	{
+		$set: {"nome": "Fernando"}
+	},
+	{multi: true}
+)
+
+
+db.alunos.find( 
+{ "_id" : ObjectId("602d1d1bd4ac5cb86f67b6e5")}
+)

@@ -1,0 +1,81 @@
+db.alunos.find( {
+	"notas": 8.5
+})
+
+
+//notas maiores que 5
+db.alunos.find( {
+	notas : { $gt: 5}
+
+})
+
+
+//Um aluno com notas maiores que 5
+db.alunos.findOne( {
+	notas : { $gt: 5}
+
+})
+
+
+
+
+db.alunos.insert( {
+	nome: "André", 
+	data_nascimento: new Date(1991, 01, 25),
+	curso: {
+		nome: "Matemática"
+	},
+	notas: [7, 5, 9, 4.5]
+
+})
+
+
+db.alunos.insert( {
+	nome: "Lucia", 
+	data_nascimento: new Date(1984, 07, 17),
+	curso: {
+		nome: "Matemática"
+	},
+	notas: [8, 9.5, 10]
+
+})
+
+
+db.alunos.insert( {
+	nome: "Ferbabdi", 
+	data_nascimento: new Date(1994, 04, 26),
+	curso: {
+		nome: "Sistemas da Informação"
+	},
+	notas: [10, 4.5, 7]
+
+})
+
+
+
+//notas maiores que 5 Ordem Crescente
+db.alunos.find( {
+	notas : { $gt: 5}
+}).sort({"nome": 1})
+
+//notas maiores que 5 Ordem decrescente
+db.alunos.find( {
+	notas : { $gt: 5}
+}).sort({"nome": -1}).limit(3)
+
+
+
+db.alunos.update(
+	{ "_id" : ObjectId("602d1d1bd4ac5cb86f67b6e5")},
+	{
+		$set: {
+			localizacao: {
+				endereco: "Rua Peru, 493D",
+				cidade: "Chapecó",
+				coordinates: [-27.078353905867797, -52.61679689991534],
+				type: "Point"
+			}
+		}
+
+	}
+)

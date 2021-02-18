@@ -1,0 +1,17 @@
+//Busca as 3 pessoas mais próximas da coordenada (skipa 1 pois é a própria pessoa)
+db.alunos.aggregate([
+{	
+	$geoNear : {
+		near: {
+			coordinates: [-23.5640265, -46.6527128],
+			type: "Point"
+		},
+		distanceField : "distancia.calculada",
+		spherical : true
+	}
+}, {$skip: 1}, {$limit: 3}])
+
+//Cria índice na localização para dizer que usa uma esfera 2d
+db.alunos.createIndex({
+	localizacao : "2dsphere"
+})

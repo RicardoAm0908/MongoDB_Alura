@@ -1,0 +1,123 @@
+db.alunos.insert({
+	"nome": "Julio",
+	"data_nascimento": new Date(1972, 08, 30),
+	"curso": {
+		"nome": "Medicina"
+	},
+	"habilidades": [
+	{
+		"nome": "Inglês",
+		"nivel": "Avançado"	
+	}]
+})
+
+
+
+db.alunos.insert({
+	"nome": "Felipe",
+	"data_nascimento": new Date(1994,02, 26),
+	"curso": {
+		"nome": "Sistemas de Informação"
+	},
+	"notas": [10.0, 9.0, 4.5],
+	"habilidades": [
+		{
+			"nome": "Inglês",
+			"nivel": "Avançado"
+		},
+		{
+			"nome": "Taekwondo",
+			"nivel": "Basico"
+		}
+	]
+})
+
+
+
+
+db.alunos.insert({
+	nome: "Alberto",
+	data_nascimento: new Date(1972, 09, 30),
+	curso: {
+		nome: "Engenharia Química"
+	},
+	habilidades: [
+	{
+		nome: "Inglês",
+		nivel: "Intermediário"	
+	}]
+})
+
+
+db.alunos.insert({
+	nome: "Daniela",
+	data_nascimento: new Date(1995, 09, 30),
+	curso: {
+		nome: "Moda"
+	},
+	habilidades: [
+	{
+		nome: "Alemão",
+		nivel: "Básico"	
+	}]
+})
+
+
+
+
+
+
+db.alunos.insert({
+	"nome": "Felipe",
+	"data_nascimento": new Date(1994, 02, 26),
+	"curso": {
+		"nome": "Sistemas de Informação"
+	},
+	"notas": [10.0, 9.0, 4.5],
+	"habilidades": [
+		{
+			"nome": "Inglês",
+			"nivel": "Avançado"
+		},
+		{
+			"nome": "Taekwondo",
+			"nivel": "Basico"
+		}
+	]
+})
+
+
+
+db.alunos.insert({
+	"nome": "Paulo",
+	"data_nascimento": new Date(1979, 12, 31),
+	"curso": {
+		"nome": "Ciências da computação"
+	},
+	"notas": [10, 9, 7],
+	"habilidades": [
+		{
+			"nome": "Inglês",
+			"nivel": "Avançado"
+		},
+		{
+			"nome": "Francês",
+			"nivel": "Avançado"
+		}
+	]
+})
+
+
+db.alunos.insert({
+	nome: "Daniela",
+	data_nascimento: new Date(1995, 07, 17),
+	notas: [10, 9, 7]
+	curso: {
+		nome: "Moda"
+	},
+	habilidades: [
+	{
+		nome: "Alemão",
+		nivel: "Básico"	
+	}]
+})
